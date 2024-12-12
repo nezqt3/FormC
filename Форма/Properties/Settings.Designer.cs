@@ -33,5 +33,15 @@ namespace Форма.Properties {
                 return ((string)(this["Microsoft_Access_База_данныхConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"|DataDirectory|\\Бд надо.accdb\"")]
+        public string Бд_надоConnectionString {
+            get {
+                return ((string)(this["Бд_надоConnectionString"]));
+            }
+        }
     }
 }

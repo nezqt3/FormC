@@ -44,6 +44,16 @@ namespace Форма
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бд_надоDataSet.Территория_комлпекса". При необходимости она может быть перемещена или удалена.
+            this.территория_комлпексаTableAdapter.Fill(this.бд_надоDataSet.Территория_комлпекса);
+
+        }
+
+        private void территория_комлпексаBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.территория_комлпексаBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.бд_надоDataSet);
 
         }
     }

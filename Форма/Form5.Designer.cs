@@ -28,20 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label отельLabel;
+            System.Windows.Forms.Label спа_СалонLabel;
+            System.Windows.Forms.Label банный_комлпексLabel;
+            System.Windows.Forms.Label теннисный_кортLabel;
+            System.Windows.Forms.Label бассейнLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.бд_надоDataSet = new Форма.Бд_надоDataSet();
+            this.территория_комлпексаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.территория_комлпексаTableAdapter = new Форма.Бд_надоDataSetTableAdapters.Территория_комлпексаTableAdapter();
+            this.tableAdapterManager = new Форма.Бд_надоDataSetTableAdapters.TableAdapterManager();
+            this.территория_комлпексаBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.территория_комлпексаBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.отельCheckBox = new System.Windows.Forms.CheckBox();
+            this.спа_СалонCheckBox = new System.Windows.Forms.CheckBox();
+            this.банный_комлпексCheckBox = new System.Windows.Forms.CheckBox();
+            this.теннисный_кортCheckBox = new System.Windows.Forms.CheckBox();
+            this.бассейнCheckBox = new System.Windows.Forms.CheckBox();
+            отельLabel = new System.Windows.Forms.Label();
+            спа_СалонLabel = new System.Windows.Forms.Label();
+            банный_комлпексLabel = new System.Windows.Forms.Label();
+            теннисный_кортLabel = new System.Windows.Forms.Label();
+            бассейнLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.бд_надоDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.территория_комлпексаBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.территория_комлпексаBindingNavigator)).BeginInit();
+            this.территория_комлпексаBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // отельLabel
+            // 
+            отельLabel.AutoSize = true;
+            отельLabel.Location = new System.Drawing.Point(185, 84);
+            отельLabel.Name = "отельLabel";
+            отельLabel.Size = new System.Drawing.Size(41, 13);
+            отельLabel.TabIndex = 2;
+            отельLabel.Text = "Отель:";
+            // 
+            // спа_СалонLabel
+            // 
+            спа_СалонLabel.AutoSize = true;
+            спа_СалонLabel.Location = new System.Drawing.Point(163, 114);
+            спа_СалонLabel.Name = "спа_СалонLabel";
+            спа_СалонLabel.Size = new System.Drawing.Size(63, 13);
+            спа_СалонLabel.TabIndex = 4;
+            спа_СалонLabel.Text = "Спа Салон:";
+            // 
+            // банный_комлпексLabel
+            // 
+            банный_комлпексLabel.AutoSize = true;
+            банный_комлпексLabel.Location = new System.Drawing.Point(124, 144);
+            банный_комлпексLabel.Name = "банный_комлпексLabel";
+            банный_комлпексLabel.Size = new System.Drawing.Size(102, 13);
+            банный_комлпексLabel.TabIndex = 6;
+            банный_комлпексLabel.Text = "Банный комлпекс:";
+            // 
+            // теннисный_кортLabel
+            // 
+            теннисный_кортLabel.AutoSize = true;
+            теннисный_кортLabel.Location = new System.Drawing.Point(133, 174);
+            теннисный_кортLabel.Name = "теннисный_кортLabel";
+            теннисный_кортLabel.Size = new System.Drawing.Size(93, 13);
+            теннисный_кортLabel.TabIndex = 8;
+            теннисный_кортLabel.Text = "Теннисный корт:";
+            // 
+            // бассейнLabel
+            // 
+            бассейнLabel.AutoSize = true;
+            бассейнLabel.Location = new System.Drawing.Point(173, 204);
+            бассейнLabel.Name = "бассейнLabel";
+            бассейнLabel.Size = new System.Drawing.Size(53, 13);
+            бассейнLabel.TabIndex = 10;
+            бассейнLabel.Text = "Бассейн:";
             // 
             // label1
             // 
@@ -50,143 +121,235 @@
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(165, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 20);
+            this.label1.Size = new System.Drawing.Size(204, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Информация о заказчиках";
+            this.label1.Text = "Территория комплекса";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // бд_надоDataSet
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label2.Location = new System.Drawing.Point(153, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ФИО:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.бд_надоDataSet.DataSetName = "Бд_надоDataSet";
+            this.бд_надоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label3
+            // территория_комлпексаBindingSource
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label3.Location = new System.Drawing.Point(109, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "id Заказчика ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.территория_комлпексаBindingSource.DataMember = "Территория комлпекса";
+            this.территория_комлпексаBindingSource.DataSource = this.бд_надоDataSet;
             // 
-            // label4
+            // территория_комлпексаTableAdapter
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label4.Location = new System.Drawing.Point(62, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Паспортные данные:";
+            this.территория_комлпексаTableAdapter.ClearBeforeFill = true;
             // 
-            // label5
+            // tableAdapterManager
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(132, 204);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Телефон";
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = Форма.Бд_надоDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.Гостиничный_комплексTableAdapter = null;
+            this.tableAdapterManager.Дополнительные_услугиTableAdapter = null;
+            this.tableAdapterManager.КлиентTableAdapter = null;
+            this.tableAdapterManager.СотрудникTableAdapter = null;
+            this.tableAdapterManager.Территория_комлпексаTableAdapter = this.территория_комлпексаTableAdapter;
             // 
-            // label6
+            // территория_комлпексаBindingNavigator
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label6.Location = new System.Drawing.Point(162, 235);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Пол";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.территория_комлпексаBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.территория_комлпексаBindingNavigator.BindingSource = this.территория_комлпексаBindingSource;
+            this.территория_комлпексаBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.территория_комлпексаBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.территория_комлпексаBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.территория_комлпексаBindingNavigatorSaveItem});
+            this.территория_комлпексаBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.территория_комлпексаBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.территория_комлпексаBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.территория_комлпексаBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.территория_комлпексаBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.территория_комлпексаBindingNavigator.Name = "территория_комлпексаBindingNavigator";
+            this.территория_комлпексаBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.территория_комлпексаBindingNavigator.Size = new System.Drawing.Size(555, 25);
+            this.территория_комлпексаBindingNavigator.TabIndex = 1;
+            this.территория_комлпексаBindingNavigator.Text = "bindingNavigator1";
             // 
-            // label7
+            // bindingNavigatorAddNewItem
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(82, 266);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Количество закупок";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
-            // maskedTextBox2
+            // bindingNavigatorCountItem
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(222, 138);
-            this.maskedTextBox2.Mask = "0000-000000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(152, 20);
-            this.maskedTextBox2.TabIndex = 8;
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
-            // textBox1
+            // bindingNavigatorDeleteItem
             // 
-            this.textBox1.Location = new System.Drawing.Point(222, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 9;
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
-            // comboBox1
+            // bindingNavigatorMoveFirstItem
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Мужской",
-            "Женский"});
-            this.comboBox1.Location = new System.Drawing.Point(222, 229);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(152, 21);
-            this.comboBox1.TabIndex = 10;
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
-            // textBox2
+            // bindingNavigatorMovePreviousItem
             // 
-            this.textBox2.Location = new System.Drawing.Point(222, 167);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 20);
-            this.textBox2.TabIndex = 11;
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
-            // textBox3
+            // bindingNavigatorSeparator
             // 
-            this.textBox3.Location = new System.Drawing.Point(222, 266);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 20);
-            this.textBox3.TabIndex = 12;
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
             // 
-            // maskedTextBox1
+            // bindingNavigatorPositionItem
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(222, 198);
-            this.maskedTextBox1.Mask = "(+7000)00-00-000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(152, 20);
-            this.maskedTextBox1.TabIndex = 13;
+            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // территория_комлпексаBindingNavigatorSaveItem
+            // 
+            this.территория_комлпексаBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.территория_комлпексаBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("территория_комлпексаBindingNavigatorSaveItem.Image")));
+            this.территория_комлпексаBindingNavigatorSaveItem.Name = "территория_комлпексаBindingNavigatorSaveItem";
+            this.территория_комлпексаBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.территория_комлпексаBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.территория_комлпексаBindingNavigatorSaveItem.Click += new System.EventHandler(this.территория_комлпексаBindingNavigatorSaveItem_Click);
+            // 
+            // отельCheckBox
+            // 
+            this.отельCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.территория_комлпексаBindingSource, "Отель", true));
+            this.отельCheckBox.Location = new System.Drawing.Point(232, 79);
+            this.отельCheckBox.Name = "отельCheckBox";
+            this.отельCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.отельCheckBox.TabIndex = 3;
+            this.отельCheckBox.Text = "checkBox1";
+            this.отельCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // спа_СалонCheckBox
+            // 
+            this.спа_СалонCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.территория_комлпексаBindingSource, "Спа Салон", true));
+            this.спа_СалонCheckBox.Location = new System.Drawing.Point(232, 109);
+            this.спа_СалонCheckBox.Name = "спа_СалонCheckBox";
+            this.спа_СалонCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.спа_СалонCheckBox.TabIndex = 5;
+            this.спа_СалонCheckBox.Text = "checkBox1";
+            this.спа_СалонCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // банный_комлпексCheckBox
+            // 
+            this.банный_комлпексCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.территория_комлпексаBindingSource, "Банный комлпекс", true));
+            this.банный_комлпексCheckBox.Location = new System.Drawing.Point(232, 139);
+            this.банный_комлпексCheckBox.Name = "банный_комлпексCheckBox";
+            this.банный_комлпексCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.банный_комлпексCheckBox.TabIndex = 7;
+            this.банный_комлпексCheckBox.Text = "checkBox1";
+            this.банный_комлпексCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // теннисный_кортCheckBox
+            // 
+            this.теннисный_кортCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.территория_комлпексаBindingSource, "Теннисный корт", true));
+            this.теннисный_кортCheckBox.Location = new System.Drawing.Point(232, 169);
+            this.теннисный_кортCheckBox.Name = "теннисный_кортCheckBox";
+            this.теннисный_кортCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.теннисный_кортCheckBox.TabIndex = 9;
+            this.теннисный_кортCheckBox.Text = "checkBox1";
+            this.теннисный_кортCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // бассейнCheckBox
+            // 
+            this.бассейнCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.территория_комлпексаBindingSource, "Бассейн", true));
+            this.бассейнCheckBox.Location = new System.Drawing.Point(232, 199);
+            this.бассейнCheckBox.Name = "бассейнCheckBox";
+            this.бассейнCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.бассейнCheckBox.TabIndex = 11;
+            this.бассейнCheckBox.Text = "checkBox1";
+            this.бассейнCheckBox.UseVisualStyleBackColor = true;
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 351);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(бассейнLabel);
+            this.Controls.Add(this.бассейнCheckBox);
+            this.Controls.Add(теннисный_кортLabel);
+            this.Controls.Add(this.теннисный_кортCheckBox);
+            this.Controls.Add(банный_комлпексLabel);
+            this.Controls.Add(this.банный_комлпексCheckBox);
+            this.Controls.Add(спа_СалонLabel);
+            this.Controls.Add(this.спа_СалонCheckBox);
+            this.Controls.Add(отельLabel);
+            this.Controls.Add(this.отельCheckBox);
+            this.Controls.Add(this.территория_комлпексаBindingNavigator);
             this.Controls.Add(this.label1);
             this.Name = "Form5";
-            this.Text = "Form5";
+            this.Text = "ТерКомпл";
             this.Load += new System.EventHandler(this.Form5_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.бд_надоDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.территория_комлпексаBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.территория_комлпексаBindingNavigator)).EndInit();
+            this.территория_комлпексаBindingNavigator.ResumeLayout(false);
+            this.территория_комлпексаBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,17 +358,27 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private Бд_надоDataSet бд_надоDataSet;
+        private System.Windows.Forms.BindingSource территория_комлпексаBindingSource;
+        private Бд_надоDataSetTableAdapters.Территория_комлпексаTableAdapter территория_комлпексаTableAdapter;
+        private Бд_надоDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator территория_комлпексаBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton территория_комлпексаBindingNavigatorSaveItem;
+        private System.Windows.Forms.CheckBox отельCheckBox;
+        private System.Windows.Forms.CheckBox спа_СалонCheckBox;
+        private System.Windows.Forms.CheckBox банный_комлпексCheckBox;
+        private System.Windows.Forms.CheckBox теннисный_кортCheckBox;
+        private System.Windows.Forms.CheckBox бассейнCheckBox;
     }
 }

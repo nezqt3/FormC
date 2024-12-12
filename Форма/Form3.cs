@@ -78,5 +78,20 @@ namespace Форма
         {
 
         }
+
+        private void сотрудникBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.сотрудникBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.бд_надоDataSet);
+
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бд_надоDataSet.Сотрудник". При необходимости она может быть перемещена или удалена.
+            this.сотрудникTableAdapter.Fill(this.бд_надоDataSet.Сотрудник);
+
+        }
     }
 }
