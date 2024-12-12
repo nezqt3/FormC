@@ -33,8 +33,8 @@
             System.Windows.Forms.Label должностьLabel;
             System.Windows.Forms.Label телефонLabel;
             System.Windows.Forms.Label рабочий_графикLabel;
-            System.Windows.Forms.Label адрес_проживанияLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.Windows.Forms.Label label2;
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,14 +62,14 @@
             this.сотрудникBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.фИОTextBox = new System.Windows.Forms.TextBox();
             this.должностьTextBox = new System.Windows.Forms.TextBox();
-            this.телефонTextBox = new System.Windows.Forms.TextBox();
             this.рабочий_графикTextBox = new System.Windows.Forms.TextBox();
             this.адрес_проживанияTextBox = new System.Windows.Forms.TextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             фИОLabel = new System.Windows.Forms.Label();
             должностьLabel = new System.Windows.Forms.Label();
             телефонLabel = new System.Windows.Forms.Label();
             рабочий_графикLabel = new System.Windows.Forms.Label();
-            адрес_проживанияLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.бд_надоDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingNavigator)).BeginInit();
@@ -112,15 +112,6 @@
             рабочий_графикLabel.TabIndex = 30;
             рабочий_графикLabel.Text = "Рабочий график:";
             // 
-            // адрес_проживанияLabel
-            // 
-            адрес_проживанияLabel.AutoSize = true;
-            адрес_проживанияLabel.Location = new System.Drawing.Point(281, 253);
-            адрес_проживанияLabel.Name = "адрес_проживанияLabel";
-            адрес_проживанияLabel.Size = new System.Drawing.Size(106, 13);
-            адрес_проживанияLabel.TabIndex = 31;
-            адрес_проживанияLabel.Text = "Адрес проживания:";
-            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -151,6 +142,7 @@
             this.button2.TabIndex = 21;
             this.button2.Text = "Последняя";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -170,6 +162,7 @@
             this.button4.TabIndex = 23;
             this.button4.Text = "Удалить";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -179,6 +172,7 @@
             this.button5.TabIndex = 24;
             this.button5.Text = "Добавить";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -188,6 +182,7 @@
             this.button6.TabIndex = 25;
             this.button6.Text = "Предыущая";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -197,6 +192,7 @@
             this.button7.TabIndex = 26;
             this.button7.Text = "Сохранить";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // бд_надоDataSet
             // 
@@ -362,19 +358,12 @@
             this.должностьTextBox.Name = "должностьTextBox";
             this.должностьTextBox.Size = new System.Drawing.Size(100, 20);
             this.должностьTextBox.TabIndex = 29;
-            // 
-            // телефонTextBox
-            // 
-            this.телефонTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.сотрудникBindingSource, "Телефон", true));
-            this.телефонTextBox.Location = new System.Drawing.Point(393, 176);
-            this.телефонTextBox.Name = "телефонTextBox";
-            this.телефонTextBox.Size = new System.Drawing.Size(100, 20);
-            this.телефонTextBox.TabIndex = 30;
+            this.должностьTextBox.TextChanged += new System.EventHandler(this.должностьTextBox_TextChanged);
             // 
             // рабочий_графикTextBox
             // 
             this.рабочий_графикTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.сотрудникBindingSource, "Рабочий график", true));
-            this.рабочий_графикTextBox.Location = new System.Drawing.Point(393, 215);
+            this.рабочий_графикTextBox.Location = new System.Drawing.Point(393, 219);
             this.рабочий_графикTextBox.Name = "рабочий_графикTextBox";
             this.рабочий_графикTextBox.Size = new System.Drawing.Size(100, 20);
             this.рабочий_графикTextBox.TabIndex = 31;
@@ -382,22 +371,41 @@
             // адрес_проживанияTextBox
             // 
             this.адрес_проживанияTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.сотрудникBindingSource, "Адрес проживания", true));
-            this.адрес_проживанияTextBox.Location = new System.Drawing.Point(393, 250);
+            this.адрес_проживанияTextBox.Location = new System.Drawing.Point(393, 253);
             this.адрес_проживанияTextBox.Name = "адрес_проживанияTextBox";
             this.адрес_проживанияTextBox.Size = new System.Drawing.Size(100, 20);
             this.адрес_проживанияTextBox.TabIndex = 32;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(281, 260);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(106, 13);
+            label2.TabIndex = 31;
+            label2.Text = "Адрес проживания:";
+            label2.Click += new System.EventHandler(this.адрес_проживанияLabel_Click);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(393, 183);
+            this.maskedTextBox1.Mask = "+7 (999) 000-0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 33;
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected_1);
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 566);
-            this.Controls.Add(адрес_проживанияLabel);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(label2);
             this.Controls.Add(this.адрес_проживанияTextBox);
             this.Controls.Add(рабочий_графикLabel);
             this.Controls.Add(this.рабочий_графикTextBox);
             this.Controls.Add(телефонLabel);
-            this.Controls.Add(this.телефонTextBox);
             this.Controls.Add(должностьLabel);
             this.Controls.Add(this.должностьTextBox);
             this.Controls.Add(фИОLabel);
@@ -452,8 +460,8 @@
         private System.Windows.Forms.ToolStripButton сотрудникBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox фИОTextBox;
         private System.Windows.Forms.TextBox должностьTextBox;
-        private System.Windows.Forms.TextBox телефонTextBox;
         private System.Windows.Forms.TextBox рабочий_графикTextBox;
         private System.Windows.Forms.TextBox адрес_проживанияTextBox;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

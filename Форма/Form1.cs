@@ -60,5 +60,11 @@ namespace Форма
             this.гостиничный_комплексTableAdapter.Fill(this.бд_надоDataSet.Гостиничный_комплекс);
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form6 form = new Form6();
+            form.Show();
+        }
     }
 }
