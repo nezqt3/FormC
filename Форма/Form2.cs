@@ -21,5 +21,20 @@ namespace Форма
         {
 
         }
+
+        private void клиентBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.клиентBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.бд_надоDataSet);
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бд_надоDataSet.Клиент". При необходимости она может быть перемещена или удалена.
+            this.клиентTableAdapter.Fill(this.бд_надоDataSet.Клиент);
+
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Форма
 {
-    public partial class Form1 : Form
+    public partial class Guestcom : Form
     {
-        public Form1()
+        public Guestcom()
         {
             InitializeComponent();
         }
@@ -37,6 +37,33 @@ namespace Форма
         private void button3_Click(object sender, EventArgs e)
         {
             Form4 form = new Form4();
+            form.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form5 form = new Form5();
+            form.Show();
+        }
+
+        private void гостиничный_комплексBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.гостиничный_комплексBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.бд_надоDataSet);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бд_надоDataSet.Гостиничный_комплекс". При необходимости она может быть перемещена или удалена.
+            this.гостиничный_комплексTableAdapter.Fill(this.бд_надоDataSet.Гостиничный_комплекс);
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form6 form = new Form6();
             form.Show();
         }
     }
